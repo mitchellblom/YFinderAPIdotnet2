@@ -28,7 +28,6 @@ namespace YfinderAPIdotnet2.Models
     [Required]
     public int Score { get; set; }
 
-    [Required]
     public float? Speed { get; set; }
 
     [Required]

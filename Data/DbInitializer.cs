@@ -70,38 +70,68 @@ namespace YfinderAPIdotnet2.Data
                 var users = new User[]
                 {
                     new User { 
+                        Email = "dv@example.com",
                         FullName = "Dee Veloper",
-                        Host = 0
+                        Host = 0,
+                        UserName = "deeveloper",
+                        Zip = 37211
                     },
                     new User { 
+                        Email = "bb@example.com",
                         FullName = "Bob Bernstein",
-                        Host = 1
+                        Host = 1,
+                        UserName = "bobbernstein",
+                        Zip = 37212
                     },
                     new User { 
+                        Email = "ldb@example.com",
                         FullName = "Lila D. Bunch",
-                        Host = 1
+                        Host = 1,
+                        UserName = "liladbunch",
+                        Zip = 37212
                     },
                     new User { 
+                        Email = "ts@example.com",
                         FullName = "Taylor Swift",
-                        Host = 0
+                        Host = 0,
+                        UserName = "taylorswift",
+                        Zip = 37203
                     },
                     new User { 
-                        FullName = "Kristen McKinney",
-                        Host = 1
+                        Email = "aa@example.com",
+                        FullName = "Auntie Anne",
+                        Host = 1,
+                        UserName = "auntieanne",
+                        Zip = 37213
                     },
                     new User { 
+                        Email = "jf@example.com",
                         FullName = "Jango Fett",
-                        Host = 0
+                        Host = 0,
+                        UserName = "jangofett",
+                        Zip = 37214
                     },
                     new User { 
+                        Email = "js@example.com",
                         FullName = "Jon Snow",
-                        Host = 0
+                        Host = 0,
+                        UserName = "jonsnow",
+                        Zip = 37210
                     },
                     new User { 
+                        Email = "vk@example.com",
                         FullName = "Val Kilmer",
-                        Host = 0
+                        Host = 0,
+                        UserName = "valkilmer",
+                        Zip = 37211
                     }
                 };
+
+                foreach (User i in users)
+                {
+                    context.User.Add(i);
+                }
+                context.SaveChanges();
 
                 //seeding HOSTS
                 var hosts = new Host[]
@@ -135,7 +165,7 @@ namespace YfinderAPIdotnet2.Data
                         City = "Nashville", 
                         State= "TN",
                         Title = "Nashville Software School",
-                        UserId = users.Single(n => n.FullName == "Kristen McKinney").UserId,
+                        UserId = users.Single(n => n.FullName == "Auntie Anne").UserId,
                         Zip = 37210
                     },
                     new Host { 
@@ -174,31 +204,31 @@ namespace YfinderAPIdotnet2.Data
                 var hotspots = new Hotspot[]
                 {
                     new Hotspot { 
-                        HostId = hosts.Single(h => h.Title == "Bongo Java").HostId,
+                        HostId = context.Host.Single(h => h.Title == "Bongo Java").HostId,
                         Title = "BongoWifi"
                     },
                     new Hotspot { 
-                        HostId = hosts.Single(h => h.Title == "Belmont University Library").HostId,
+                        HostId = context.Host.Single(h => h.Title == "Belmont University Library").HostId,
                         Title = "BruinWifi"
                     },
                     new Hotspot { 
-                        HostId = hosts.Single(h => h.Title == "Steadfast Coffee").HostId,
+                        HostId = context.Host.Single(h => h.Title == "Steadfast Coffee").HostId,
                         Title = "SteadfastWifi"
                     },
                     new Hotspot { 
-                        HostId = hosts.Single(h => h.Title == "Nashville Software School").HostId,
+                        HostId = context.Host.Single(h => h.Title == "Nashville Software School").HostId,
                         Title = "NSSguest"
                     },
                     new Hotspot { 
-                        HostId = hosts.Single(h => h.Title == "Red Bicycle").HostId,
+                        HostId = context.Host.Single(h => h.Title == "Red Bicycle").HostId,
                         Title = "RBwifi"
                     },
                     new Hotspot { 
-                        HostId = hosts.Single(h => h.Title == "Farmers Market").HostId,
+                        HostId = context.Host.Single(h => h.Title == "Farmers Market").HostId,
                         Title = "FMwifi"
                     },
                     new Hotspot { 
-                        HostId = hosts.Single(h => h.Title == "Edley's BBQ").HostId,
+                        HostId = context.Host.Single(h => h.Title == "Edley's BBQ").HostId,
                         Title = "EdleysWifi"
                     },
                 };
@@ -215,58 +245,58 @@ namespace YfinderAPIdotnet2.Data
                     new Rating { 
                         Comment = "Killer good speed, and nice place to focus on the task",
                         RatingDate = DateTime.Now,
-                        HotspotId = hotspots.Single(h => h.Title == "BongoWifi").HotspotId,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "BongoWifi").HotspotId,
                         Public = 1,
                         Score = 4,
-                        UserId = users.Single(h => h.FullName == "Jango Fett").UserId
+                        UserId = context.User.Single(h => h.FullName == "Jango Fett").UserId
                     },
                     new Rating { 
                         Comment = "Not the best wifi, but Iiked the darkness. It was almost like a cave.",
                         RatingDate = DateTime.Now,
-                        HotspotId = hotspots.Single(h => h.Title == "BruinWifi").HotspotId,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "BruinWifi").HotspotId,
                         Public = 1,
                         Score = 4,
-                        UserId = users.Single(h => h.FullName == "Val Kilmer").UserId
+                        UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
                         Comment = "Tried the coffee soda while sitting there for hours. Tons of outlets.",
                         RatingDate = DateTime.Now,
-                        HotspotId = hotspots.Single(h => h.Title == "SteadfastWifi").HotspotId,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "SteadfastWifi").HotspotId,
                         Public = 1,
                         Score = 5,
-                        UserId = users.Single(h => h.FullName == "Val Kilmer").UserId
+                        UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
                         Comment = "Couldn't find any outlets. Wouldn't recommend.",
                         RatingDate = DateTime.Now,
-                        HotspotId = hotspots.Single(h => h.Title == "BruinWifi").HotspotId,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "BruinWifi").HotspotId,
                         Public = 1,
                         Score = 2,
-                        UserId = users.Single(h => h.FullName == "Val Kilmer").UserId
+                        UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
                         Comment = "They let me sit here all day even though I didn't buy anything.",
                         RatingDate = DateTime.Now,
-                        HotspotId = hotspots.Single(h => h.Title == "RBwifi").HotspotId,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
                         Public = 1,
                         Score = 2,
-                        UserId = users.Single(h => h.FullName == "Val Kilmer").UserId
+                        UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
                         Comment = "They let me sit here all day even though I didn't buy anything.",
                         RatingDate = DateTime.Now,
-                        HotspotId = hotspots.Single(h => h.Title == "RBwifi").HotspotId,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
                         Public = 1,
                         Score = 2,
-                        UserId = users.Single(h => h.FullName == "Dee Veloper").UserId
+                        UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
                     },
                     new Rating { 
                         Comment = "They let me sit here all day even though I didn't buy anything.",
                         RatingDate = DateTime.Now,
-                        HotspotId = hotspots.Single(h => h.Title == "FMwifi").HotspotId,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "FMwifi").HotspotId,
                         Public = 1,
                         Score = 2,
-                        UserId = users.Single(h => h.FullName == "Jon Snow").UserId
+                        UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
                     }
                 };
 
@@ -280,77 +310,70 @@ namespace YfinderAPIdotnet2.Data
                 var ratingDescriptors = new RatingDescriptor[]
                 {
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 1).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 1).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 1).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 1).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 1).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 3).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 1).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 3).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 1).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 5).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 1).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 5).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 2).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 2).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 2).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 2).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 2).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 4).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 2).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 4).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 2).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 6).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 2).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 6).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 3).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 3).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 3).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 3).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 3).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 5).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 3).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 5).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 4).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 5).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 4).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 5).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 4).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 7).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 4).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 7).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 5).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 9).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 5).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 9).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 6).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 12).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 6).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 12).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 6).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 10).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 6).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 10).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 7).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 11).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 7).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 11).DescriptorId
                     },
                     new RatingDescriptor {
-                        RatingId = ratings.Single(o => o.RatingId == 7).RatingId,
-                        DescriptorId = descriptors.Single(o => o.DescriptorId == 1).DescriptorId
+                        RatingId = context.Rating.Single(o => o.RatingId == 7).RatingId,
+                        DescriptorId = context.Descriptor.Single(o => o.DescriptorId == 1).DescriptorId
                     }
                 };
                    
                 foreach (RatingDescriptor i in ratingDescriptors)
                 {
                     context.RatingDescriptor.Add(i);
-                }
-                context.SaveChanges();
-
-
-                foreach (User i in users)
-                {
-                    context.User.Add(i);
                 }
                 context.SaveChanges();
 

@@ -24,7 +24,7 @@ namespace YfinderAPIdotnet2.Controllers
 
         // GET all Hosts from host table
         [HttpGet]
-        public IActionResult Get(string active)
+        public IActionResult Get()
         {
             IQueryable<object> hosts = from host in _context.Host select host;
 
