@@ -134,7 +134,26 @@ namespace YfinderAPIdotnet2.Controllers
             return new StatusCodeResult(StatusCodes.Status204NoContent);
         }
 
-    // No Delete necessary for Descriptors; users will not be deleting them.
+        // Delete descriptors
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Descriptor descriptor = _context.Descriptor.Single(r => r.DescriptorId == id);
+            if (descriptor == null)
+            {
+                return NotFound();
+            }
+
+            _context.Descriptor.Remove(descriptor);
+            _context.SaveChanges();
+
+            return Ok(descriptor);
+        }
 
     }
 }

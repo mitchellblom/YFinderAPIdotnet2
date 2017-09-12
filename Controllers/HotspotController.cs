@@ -134,7 +134,25 @@ namespace YfinderAPIdotnet2.Controllers
             return new StatusCodeResult(StatusCodes.Status204NoContent);
         }
 
-    // Delete feature may be in version 2. This may end up as an "active" vs "inactive" hotspot for search results.
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Hotspot hotspot = _context.Hotspot.Single(r => r.HotspotId == id);
+            if (hotspot == null)
+            {
+                return NotFound();
+            }
+
+            _context.Hotspot.Remove(hotspot);
+            _context.SaveChanges();
+
+            return Ok(hotspot);
+        }
 
     }
 }
