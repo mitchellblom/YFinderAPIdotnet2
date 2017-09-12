@@ -48,8 +48,6 @@ namespace YfinderAPIdotnet2
                 app.UseDeveloperExceptionPage();
             }
 
-            DbInitializer.Initialize(app.ApplicationServices);
-
             app.UseMvc();
         }
     }
