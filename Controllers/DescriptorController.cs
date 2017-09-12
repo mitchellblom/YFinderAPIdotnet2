@@ -16,8 +16,8 @@ namespace YfinderAPIdotnet2.Controllers
     public class DescriptorController : Controller
     {
 
-        private YFinderContext _context;
-        public DescriptorController(YFinderContext ctx)
+        private YfinderAPIdotnet2Context _context;
+        public DescriptorController(YfinderAPIdotnet2Context ctx)
         {
             _context = ctx;
         }
@@ -58,6 +58,7 @@ namespace YfinderAPIdotnet2.Controllers
             }
             catch (System.InvalidOperationException ex)
             {
+                var filler = ex;
                 return NotFound();
             }
         }

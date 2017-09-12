@@ -58,6 +58,7 @@ namespace YfinderAPIdotnet2.Controllers
             }
             catch (System.InvalidOperationException ex)
             {
+                var filler = ex;
                 return NotFound();
             }
         }
