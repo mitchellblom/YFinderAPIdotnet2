@@ -31,7 +31,6 @@ namespace YfinderAPIdotnet2.Models
     public User User { get; set; }  // Host user must be Host == 1 (true)
 
     [Required]
-    [StringLength(5)]
     public int Zip { get; set; }
 
   }
