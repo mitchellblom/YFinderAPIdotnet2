@@ -21,6 +21,7 @@
  - Install your OS's version of Postman to interact with the API from a standalone application view.
  - Install your OS's version of DB Browser for SQLite from http://sqlitebrowser.org/
 
-### Example Get Return
+### Example Get Returns:
 
-![Splashpage](https://raw.githubusercontent.com/mitchellblom/TripEZ/readme/images/screenshots/landing.png)
+![Splashpage](https://raw.githubusercontent.com/mitchellblom/YFinderAPIdotnet2/master/Images/rating_get_ex.png)
+![Splashpage](https://raw.githubusercontent.com/mitchellblom/YFinderAPIdotnet2/master/Images/user_get_ex.png)
