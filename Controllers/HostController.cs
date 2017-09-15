@@ -134,7 +134,25 @@ namespace YfinderAPIdotnet2.Controllers
             return new StatusCodeResult(StatusCodes.Status204NoContent);
         }
 
-    // Delete feature may be in version 2. This may end up as an "active" vs "inactive" host for search results.
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Host host = _context.Host.Single(r => r.HostId == id);
+            if (host == null)
+            {
+                return NotFound();
+            }
+
+            _context.Host.Remove(host);
+            _context.SaveChanges();
+
+            return Ok(host);
+        }
 
     }
 }

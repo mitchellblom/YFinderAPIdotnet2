@@ -18,8 +18,6 @@ namespace YfinderAPIdotnet2.Models
 
     [Required]
     public int HotspotId { get; set; }
-
-    [Required]
     public Hotspot Hotspot { get; set; }
 
     [Required]
