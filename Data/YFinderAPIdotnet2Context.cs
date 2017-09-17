@@ -11,6 +11,7 @@ namespace YfinderAPIdotnet2.Data
         { }
 
         public DbSet<Descriptor> Descriptor { get; set; }
+        public DbSet<Favorite> Favorite { get; set; }
         public DbSet<Host> Host { get; set; }
         public DbSet<Hotspot> Hotspot { get; set; }
         public DbSet<Rating> Rating { get; set; }
