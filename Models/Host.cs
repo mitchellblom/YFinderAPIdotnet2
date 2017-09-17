@@ -33,5 +33,7 @@ namespace YfinderAPIdotnet2.Models
     [Required]
     public int Zip { get; set; }
 
+    public virtual ICollection<Favorite> Favorite { get; set ; }
+
   }
 }
