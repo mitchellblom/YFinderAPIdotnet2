@@ -377,6 +377,65 @@ namespace YfinderAPIdotnet2.Data
                 }
                 context.SaveChanges();
 
+                //seeding Favorites, matching up with the initialized ratings and descriptors by id
+                var favorites = new Favorite[]
+                {
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 1).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 1).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 1).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 2).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 1).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 3).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 2).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 4).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 2).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 5).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 2).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 6).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 3).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 1).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 3).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 3).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 3).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 5).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 4).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 2).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 4).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 4).HostId
+                    },
+                    new Favorite {
+                        UserId = context.User.Single(o => o.UserId == 4).UserId,
+                        HostId = context.Host.Single(o => o.HostId == 6).HostId
+                    }
+                };
+                   
+                foreach (Favorite i in favorites)
+                {
+                    context.Favorite.Add(i);
+                }
+                context.SaveChanges();
+
             }
        }
     }
