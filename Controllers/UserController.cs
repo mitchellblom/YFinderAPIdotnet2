@@ -67,7 +67,7 @@ namespace YfinderAPIdotnet2.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] User user)
         {
-            ModelState.Remove("UserId");
+            ModelState.Remove("userId");
 
             if (!ModelState.IsValid)
             {
