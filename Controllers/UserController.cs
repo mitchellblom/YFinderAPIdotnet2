@@ -67,6 +67,8 @@ namespace YfinderAPIdotnet2.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] User user)
         {
+            ModelState.Remove("UserId");
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
