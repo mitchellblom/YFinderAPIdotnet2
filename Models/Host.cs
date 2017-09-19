@@ -31,7 +31,7 @@ namespace YfinderAPIdotnet2.Models
     public User User { get; set; }  // Host user must be Host == 1 (true)
 
     [Required]
-    public int Zip { get; set; }
+    public string Zip { get; set; }
 
     public virtual ICollection<Favorite> Favorite { get; set ; }
 

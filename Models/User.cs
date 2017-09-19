@@ -26,7 +26,7 @@ namespace YfinderAPIdotnet2.Models
     public string UserName { get; set; }
 
     [Required]
-    public int Zip { get; set; }
+    public string Zip { get; set; }
 
     public virtual ICollection<Favorite> Favorite { get; set ; }
 

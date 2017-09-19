@@ -74,56 +74,56 @@ namespace YfinderAPIdotnet2.Data
                         FullName = "Dee Veloper",
                         Host = 0,
                         UserName = "deeveloper",
-                        Zip = 37211
+                        Zip = "37211"
                     },
                     new User { 
                         Email = "bb@example.com",
                         FullName = "Bob Bernstein",
                         Host = 1,
                         UserName = "bobbernstein",
-                        Zip = 37212
+                        Zip = "37212"
                     },
                     new User { 
                         Email = "ldb@example.com",
                         FullName = "Lila D. Bunch",
                         Host = 1,
                         UserName = "liladbunch",
-                        Zip = 37212
+                        Zip = "37212"
                     },
                     new User { 
                         Email = "ts@example.com",
                         FullName = "Taylor Swift",
                         Host = 0,
                         UserName = "taylorswift",
-                        Zip = 37203
+                        Zip = "37203"
                     },
                     new User { 
                         Email = "aa@example.com",
                         FullName = "Auntie Anne",
                         Host = 1,
                         UserName = "auntieanne",
-                        Zip = 37213
+                        Zip = "37213"
                     },
                     new User { 
                         Email = "jf@example.com",
                         FullName = "Jango Fett",
                         Host = 0,
                         UserName = "jangofett",
-                        Zip = 37214
+                        Zip = "37214"
                     },
                     new User { 
                         Email = "js@example.com",
                         FullName = "Jon Snow",
                         Host = 0,
                         UserName = "jonsnow",
-                        Zip = 37210
+                        Zip = "37210"
                     },
                     new User { 
                         Email = "vk@example.com",
                         FullName = "Val Kilmer",
                         Host = 0,
                         UserName = "valkilmer",
-                        Zip = 37211
+                        Zip = "37211"
                     }
                 };
 
@@ -142,7 +142,7 @@ namespace YfinderAPIdotnet2.Data
                         State= "TN",
                         Title = "Bongo Java",
                         UserId = users.Single(n => n.FullName == "Bob Bernstein").UserId,
-                        Zip = 37212
+                        Zip = "37212"
                     },
                     new Host { 
                         Address = "1900 Belmont Blvd", 
@@ -150,7 +150,7 @@ namespace YfinderAPIdotnet2.Data
                         State= "TN",
                         Title = "Belmont University Library",
                         UserId = users.Single(n => n.FullName == "Lila D. Bunch").UserId,
-                        Zip = 37212
+                        Zip = "37212"
                     },
                     new Host { 
                         Address = "603 Taylor St", 
@@ -158,7 +158,7 @@ namespace YfinderAPIdotnet2.Data
                         State= "TN",
                         Title = "Steadfast Coffee",
                         UserId = null,
-                        Zip = 37208
+                        Zip = "37208"
                     },
                     new Host { 
                         Address = "603 Taylor St", 
@@ -166,7 +166,7 @@ namespace YfinderAPIdotnet2.Data
                         State= "TN",
                         Title = "Nashville Software School",
                         UserId = users.Single(n => n.FullName == "Auntie Anne").UserId,
-                        Zip = 37210
+                        Zip = "37210"
                     },
                     new Host { 
                         Address = "2519 Nolensville Pike", 
@@ -174,7 +174,7 @@ namespace YfinderAPIdotnet2.Data
                         State= "TN",
                         Title = "Red Bicycle",
                         UserId = null,
-                        Zip = 37211
+                        Zip = "37211"
                     },
                     new Host { 
                         Address = "900 Rosa Parks Blvd", 
@@ -182,7 +182,7 @@ namespace YfinderAPIdotnet2.Data
                         State= "TN",
                         Title = "Farmers Market",
                         UserId = null,
-                        Zip = 37208
+                        Zip = "37208"
                     },
                     new Host { 
                         Address = "4500 Murphy Rd", 
@@ -190,7 +190,7 @@ namespace YfinderAPIdotnet2.Data
                         State= "TN",
                         Title = "Edley's BBQ",
                         UserId = null,
-                        Zip = 37209
+                        Zip = "37209"
                     }
                 };
 
