@@ -16,6 +16,12 @@ namespace YfinderAPIdotnet2.Models
     [Required]
     [StringLength(100)]
     public string Title { get; set; }
+
+    [Required]
+    public double Latitude { get; set; }
+
+    [Required]
+    public double Longitude { get; set; }
     
   }
 }

@@ -205,31 +205,45 @@ namespace YfinderAPIdotnet2.Data
                 {
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Bongo Java").HostId,
-                        Title = "BongoWifi"
+                        Title = "BongoWifi",
+                        Latitude = 36.1321781,
+                        Longitude = -86.79582770000002
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Belmont University Library").HostId,
-                        Title = "BruinWifi"
+                        Title = "BruinWifi",
+                        Latitude = 36.13462560000001,
+                        Longitude = -86.79602169999998
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Steadfast Coffee").HostId,
-                        Title = "SteadfastWifi"
+                        Title = "SteadfastWifi",
+                        Latitude = 36.1776394,
+                        Longitude = -86.79164029999998
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Nashville Software School").HostId,
-                        Title = "NSSguest"
+                        Title = "NSSguest",
+                        Latitude = 36.1325338,
+                        Longitude = -86.75656420000001
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Red Bicycle").HostId,
-                        Title = "RBwifi"
+                        Title = "RBwifi",
+                        Latitude = 36.1177254,
+                        Longitude = -86.74888650000003
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Farmers Market").HostId,
-                        Title = "FMwifi"
+                        Title = "FMwifi",
+                        Latitude = 36.1707598,
+                        Longitude = -86.78883940000003
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Edley's BBQ").HostId,
-                        Title = "EdleysWifi"
+                        Title = "EdleysWifi",
+                        Latitude = 36.14116840000001,
+                        Longitude = -86.84059389999999
                     },
                 };
 

@@ -12,7 +12,6 @@ namespace YfinderAPIdotnet2.Models
 
     public string Comment { get; set; }
 
-    [Required]
     [DataType(DataType.Date)]
     public DateTime RatingDate { get; set; }
 
@@ -34,6 +33,10 @@ namespace YfinderAPIdotnet2.Models
     public User User { get; set; }
 
     public virtual ICollection<RatingDescriptor> RatingDescriptor { get; set ; }
+
+    public Rating() {
+      RatingDate = DateTime.Now;
+    }
 
   }
 }
