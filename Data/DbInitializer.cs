@@ -302,11 +302,29 @@ namespace YfinderAPIdotnet2.Data
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
-                        Comment = "They let me sit here all day even though I didn't buy anything.",
+                        Comment = "Met with a client here. Very friendly staff. Refilled my coffee for me.",
                         RatingDate = DateTime.Now,
                         HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
                         Public = 1,
-                        Score = 2,
+                        Score = 5,
+                        Speed = 2,
+                        UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
+                    },
+                    new Rating { 
+                        Comment = "Studied here for hours with a friend. Aced the exam!",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
+                        Public = 1,
+                        Score = 4,
+                        Speed = 2,
+                        UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
+                    },
+                    new Rating { 
+                        Comment = "Coded several projects here. Strong, stable wifi",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
+                        Public = 1,
+                        Score = 4,
                         Speed = 2,
                         UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
                     },
@@ -317,6 +335,24 @@ namespace YfinderAPIdotnet2.Data
                         Public = 1,
                         Score = 2,
                         Speed = 5,
+                        UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
+                    },
+                    new Rating { 
+                        Comment = "Good place for extraverts to peoplewatch while working.",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "FMwifi").HotspotId,
+                        Public = 1,
+                        Score = 3,
+                        Speed = 5,
+                        UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
+                    },
+                    new Rating { 
+                        Comment = "Wifi is weak, but the atmosphere is good.",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "FMwifi").HotspotId,
+                        Public = 1,
+                        Score = 3,
+                        Speed = 8,
                         UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
                     }
                 };
