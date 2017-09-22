@@ -91,11 +91,11 @@ namespace YfinderAPIdotnet2.Data
                         Zip = 37212
                     },
                     new User { 
-                        Email = "ts@example.com",
-                        FullName = "Taylor Swift",
+                        Email = "mb@example.com",
+                        FullName = "Mitchell Blom",
                         Host = 0,
-                        UserName = "taylorswift",
-                        Zip = 37203
+                        UserName = "mitchellblom",
+                        Zip = 37208
                     },
                     new User { 
                         Email = "aa@example.com",
@@ -161,7 +161,7 @@ namespace YfinderAPIdotnet2.Data
                         Zip = 37208
                     },
                     new Host { 
-                        Address = "603 Taylor St", 
+                        Address = "500 Interstate Blvd S", 
                         City = "Nashville", 
                         State= "TN",
                         Title = "Nashville Software School",
@@ -262,6 +262,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "BongoWifi").HotspotId,
                         Public = 1,
                         Score = 4,
+                        Speed = 5,
                         UserId = context.User.Single(h => h.FullName == "Jango Fett").UserId
                     },
                     new Rating { 
@@ -270,6 +271,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "BruinWifi").HotspotId,
                         Public = 1,
                         Score = 4,
+                        Speed = 6,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
@@ -278,6 +280,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "SteadfastWifi").HotspotId,
                         Public = 1,
                         Score = 5,
+                        Speed = 8,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
@@ -286,6 +289,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "BruinWifi").HotspotId,
                         Public = 1,
                         Score = 2,
+                        Speed = 3,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
@@ -294,6 +298,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
                         Public = 1,
                         Score = 2,
+                        Speed = 4,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
@@ -302,6 +307,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
                         Public = 1,
                         Score = 2,
+                        Speed = 2,
                         UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
                     },
                     new Rating { 
@@ -310,6 +316,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "FMwifi").HotspotId,
                         Public = 1,
                         Score = 2,
+                        Speed = 5,
                         UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
                     }
                 };
