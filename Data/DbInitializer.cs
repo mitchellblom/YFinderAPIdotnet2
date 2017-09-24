@@ -91,11 +91,11 @@ namespace YfinderAPIdotnet2.Data
                         Zip = 37212
                     },
                     new User { 
-                        Email = "ts@example.com",
-                        FullName = "Taylor Swift",
+                        Email = "mb@example.com",
+                        FullName = "Mitchell Blom",
                         Host = 0,
-                        UserName = "taylorswift",
-                        Zip = 37203
+                        UserName = "mitchellblom",
+                        Zip = 37208
                     },
                     new User { 
                         Email = "aa@example.com",
@@ -161,7 +161,7 @@ namespace YfinderAPIdotnet2.Data
                         Zip = 37208
                     },
                     new Host { 
-                        Address = "603 Taylor St", 
+                        Address = "500 Interstate Blvd S", 
                         City = "Nashville", 
                         State= "TN",
                         Title = "Nashville Software School",
@@ -205,31 +205,45 @@ namespace YfinderAPIdotnet2.Data
                 {
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Bongo Java").HostId,
-                        Title = "BongoWifi"
+                        Title = "BongoWifi",
+                        Latitude = 36.1321781,
+                        Longitude = -86.79582770000002
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Belmont University Library").HostId,
-                        Title = "BruinWifi"
+                        Title = "BruinWifi",
+                        Latitude = 36.13462560000001,
+                        Longitude = -86.79602169999998
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Steadfast Coffee").HostId,
-                        Title = "SteadfastWifi"
+                        Title = "SteadfastWifi",
+                        Latitude = 36.1776394,
+                        Longitude = -86.79164029999998
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Nashville Software School").HostId,
-                        Title = "NSSguest"
+                        Title = "NSSguest",
+                        Latitude = 36.1325338,
+                        Longitude = -86.75656420000001
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Red Bicycle").HostId,
-                        Title = "RBwifi"
+                        Title = "RBwifi",
+                        Latitude = 36.1177254,
+                        Longitude = -86.74888650000003
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Farmers Market").HostId,
-                        Title = "FMwifi"
+                        Title = "FMwifi",
+                        Latitude = 36.1707598,
+                        Longitude = -86.78883940000003
                     },
                     new Hotspot { 
                         HostId = context.Host.Single(h => h.Title == "Edley's BBQ").HostId,
-                        Title = "EdleysWifi"
+                        Title = "EdleysWifi",
+                        Latitude = 36.14116840000001,
+                        Longitude = -86.84059389999999
                     },
                 };
 
@@ -248,6 +262,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "BongoWifi").HotspotId,
                         Public = 1,
                         Score = 4,
+                        Speed = 5,
                         UserId = context.User.Single(h => h.FullName == "Jango Fett").UserId
                     },
                     new Rating { 
@@ -256,6 +271,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "BruinWifi").HotspotId,
                         Public = 1,
                         Score = 4,
+                        Speed = 6,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
@@ -264,6 +280,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "SteadfastWifi").HotspotId,
                         Public = 1,
                         Score = 5,
+                        Speed = 8,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
@@ -272,6 +289,7 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "BruinWifi").HotspotId,
                         Public = 1,
                         Score = 2,
+                        Speed = 3,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
@@ -280,14 +298,34 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
                         Public = 1,
                         Score = 2,
+                        Speed = 4,
                         UserId = context.User.Single(h => h.FullName == "Val Kilmer").UserId
                     },
                     new Rating { 
-                        Comment = "They let me sit here all day even though I didn't buy anything.",
+                        Comment = "Met with a client here. Very friendly staff. Refilled my coffee for me.",
                         RatingDate = DateTime.Now,
                         HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
                         Public = 1,
-                        Score = 2,
+                        Score = 5,
+                        Speed = 2,
+                        UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
+                    },
+                    new Rating { 
+                        Comment = "Studied here for hours with a friend. Aced the exam!",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
+                        Public = 1,
+                        Score = 4,
+                        Speed = 2,
+                        UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
+                    },
+                    new Rating { 
+                        Comment = "Coded several projects here. Strong, stable wifi",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "RBwifi").HotspotId,
+                        Public = 1,
+                        Score = 4,
+                        Speed = 2,
                         UserId = context.User.Single(h => h.FullName == "Dee Veloper").UserId
                     },
                     new Rating { 
@@ -296,6 +334,25 @@ namespace YfinderAPIdotnet2.Data
                         HotspotId = context.Hotspot.Single(h => h.Title == "FMwifi").HotspotId,
                         Public = 1,
                         Score = 2,
+                        Speed = 5,
+                        UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
+                    },
+                    new Rating { 
+                        Comment = "Good place for extraverts to peoplewatch while working.",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "FMwifi").HotspotId,
+                        Public = 1,
+                        Score = 3,
+                        Speed = 5,
+                        UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
+                    },
+                    new Rating { 
+                        Comment = "Wifi is weak, but the atmosphere is good.",
+                        RatingDate = DateTime.Now,
+                        HotspotId = context.Hotspot.Single(h => h.Title == "FMwifi").HotspotId,
+                        Public = 1,
+                        Score = 3,
+                        Speed = 8,
                         UserId = context.User.Single(h => h.FullName == "Jon Snow").UserId
                     }
                 };
